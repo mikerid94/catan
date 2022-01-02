@@ -1,14 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface Hexagon {
-  resource: undefined | "wheat";
+export interface Hexagon {
+  resource: "empty" | "wheat" | "lumber" | "clay" | "rock" | "desert";
   diceRoll: 2 | 3 | 4 | 5 | 6 | 8 | 9 | 10 | 11 | 12 | undefined;
   nodes: `${number}-${number}-${number}`[];
 }
 const defaultHexagon = {
-  resource: undefined,
+  resource: "empty",
   diceRoll: undefined,
-};
+} as const;
 
 export interface HexagonsState {
   [index: number]: undefined | Hexagon;

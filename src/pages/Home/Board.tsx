@@ -1,5 +1,6 @@
 import { FC } from "react";
 import styled from "styled-components";
+import { Hexagon } from "./Hexagon";
 
 const Container = styled.div`
   display: flex;
@@ -12,47 +13,37 @@ const Row = styled.div`
   justify-content: center;
 `;
 
-const Hexagone = styled.div`
-  width: 100px;
-  margin: 4px;
-  height: 115.47px;
-  display: inline-block;
-  clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
-  background-color: burlywood;
-  margin-bottom: -24px;
-`;
-
 export const Board: FC = () => {
   return (
     <Container>
       <Row>
-        <Hexagone />
-        <Hexagone />
-        <Hexagone />
+        <Hexagon position={6} />
+        <Hexagon position={7} />
+        <Hexagon position={8} />
       </Row>
       <Row>
-        <Hexagone />
-        <Hexagone />
-        <Hexagone />
-        <Hexagone />
+        <Hexagon position={11} />
+        <Hexagon position={12} />
+        <Hexagon position={13} />
+        <Hexagon position={14} />
       </Row>
       <Row>
-        <Hexagone />
-        <Hexagone />
-        <Hexagone />
-        <Hexagone />
-        <Hexagone />
+        <Hexagon position={17} />
+        <Hexagon position={18} />
+        <Hexagon position={19} />
+        <Hexagon position={20} />
+        <Hexagon position={21} />
       </Row>
       <Row>
-        <Hexagone />
-        <Hexagone />
-        <Hexagone />
-        <Hexagone />
+        <Hexagon position={24} />
+        <Hexagon position={25} />
+        <Hexagon position={26} />
+        <Hexagon position={27} />
       </Row>
       <Row>
-        <Hexagone />
-        <Hexagone />
-        <Hexagone />
+        <Hexagon position={30} />
+        <Hexagon position={31} />
+        <Hexagon position={32} />
       </Row>
     </Container>
   );
