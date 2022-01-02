@@ -21,6 +21,8 @@
 
 - dark/light theme
 - PWA
+- optimise for performance
+- 100 lighthouse score
 
 ## Code style-guide
 
