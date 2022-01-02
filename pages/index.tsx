@@ -1,8 +1,1 @@
-import type { NextPage } from "next";
-import { Board } from "../src/pages/Home/Board";
-
-const Home: NextPage = () => {
-  return <Board />;
-};
-
-export default Home;
+export { Board as default } from "../src/pages/Home/Board";
