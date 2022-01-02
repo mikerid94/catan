@@ -1,42 +1,8 @@
 import type { NextPage } from "next";
-import styles from "../styles/Home.module.css";
+import { Board } from "../src/pages/Home/Board";
 
 const Home: NextPage = () => {
-  return (
-    <div className={styles.container}>
-      <div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-
-      <div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-
-      <div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-  );
+  return <Board />;
 };
 
 export default Home;
