@@ -5,10 +5,6 @@ export interface Hexagon {
   diceRoll: 2 | 3 | 4 | 5 | 6 | 8 | 9 | 10 | 11 | 12 | undefined;
   nodes: `${number}-${number}-${number}`[];
 }
-const defaultHexagon = {
-  resource: "empty",
-  diceRoll: undefined,
-} as const;
 
 export interface HexagonsState {
   [index: number]: undefined | Hexagon;
@@ -21,19 +17,16 @@ const initialState: HexagonsState = {
   4: undefined,
   5: undefined,
   6: {
-    ...defaultHexagon,
     resource: "rock",
     diceRoll: 10,
     nodes: ["1-2-6", "2-6-7", "6-7-12", "6-11-12", "5-6-11", "1-5-6"],
   },
   7: {
-    ...defaultHexagon,
     resource: "sheep",
     diceRoll: 2,
     nodes: ["2-3-7", "3-7-8", "7-8-13", "7-12-13", "6-7-12", "2-6-7"],
   },
   8: {
-    ...defaultHexagon,
     resource: "lumber",
     diceRoll: 9,
     nodes: ["3-4-8", "4-8-9", "8-9-14", "8-13-14", "7-8-13", "3-7-8"],
@@ -41,25 +34,21 @@ const initialState: HexagonsState = {
   9: undefined,
   10: undefined,
   11: {
-    ...defaultHexagon,
     resource: "wheat",
     diceRoll: 12,
     nodes: ["5-6-11", "6-11-12", "11-12-18", "11-17-18", "10-11-17", "5-10-11"],
   },
   12: {
-    ...defaultHexagon,
     resource: "clay",
     diceRoll: 6,
     nodes: ["6-7-12", "7-12-13", "12-13-19", "12-18-19", "11-12-18", "6-11-12"],
   },
   13: {
-    ...defaultHexagon,
     resource: "sheep",
     diceRoll: 4,
     nodes: ["7-8-13", "8-13-14", "13-14-20", "13-19-20", "12-13-19", "7-12-13"],
   },
   14: {
-    ...defaultHexagon,
     resource: "clay",
     diceRoll: 10,
     nodes: ["8-9-14", "9-14-15", "14-15-21", "14-20-21", "13-14-20", "8-13-14"],
@@ -67,7 +56,6 @@ const initialState: HexagonsState = {
   15: undefined,
   16: undefined,
   17: {
-    ...defaultHexagon,
     resource: "wheat",
     diceRoll: 9,
     nodes: [
@@ -80,7 +68,6 @@ const initialState: HexagonsState = {
     ],
   },
   18: {
-    ...defaultHexagon,
     resource: "lumber",
     diceRoll: 11,
     nodes: [
@@ -93,7 +80,6 @@ const initialState: HexagonsState = {
     ],
   },
   19: {
-    ...defaultHexagon,
     resource: "desert",
     diceRoll: undefined,
     nodes: [
@@ -106,7 +92,6 @@ const initialState: HexagonsState = {
     ],
   },
   20: {
-    ...defaultHexagon,
     resource: "lumber",
     diceRoll: 3,
     nodes: [
@@ -119,7 +104,6 @@ const initialState: HexagonsState = {
     ],
   },
   21: {
-    ...defaultHexagon,
     resource: "rock",
     diceRoll: 8,
     nodes: [
@@ -134,7 +118,6 @@ const initialState: HexagonsState = {
   22: undefined,
   23: undefined,
   24: {
-    ...defaultHexagon,
     resource: "lumber",
     diceRoll: 8,
     nodes: [
@@ -147,7 +130,6 @@ const initialState: HexagonsState = {
     ],
   },
   25: {
-    ...defaultHexagon,
     resource: "rock",
     diceRoll: 3,
     nodes: [
@@ -160,7 +142,6 @@ const initialState: HexagonsState = {
     ],
   },
   26: {
-    ...defaultHexagon,
     resource: "wheat",
     diceRoll: 4,
     nodes: [
@@ -173,7 +154,6 @@ const initialState: HexagonsState = {
     ],
   },
   27: {
-    ...defaultHexagon,
     resource: "sheep",
     diceRoll: 5,
     nodes: [
@@ -188,7 +168,6 @@ const initialState: HexagonsState = {
   28: undefined,
   29: undefined,
   30: {
-    ...defaultHexagon,
     resource: "clay",
     diceRoll: 5,
     nodes: [
@@ -201,7 +180,6 @@ const initialState: HexagonsState = {
     ],
   },
   31: {
-    ...defaultHexagon,
     resource: "wheat",
     diceRoll: 6,
     nodes: [
@@ -214,7 +192,6 @@ const initialState: HexagonsState = {
     ],
   },
   32: {
-    ...defaultHexagon,
     resource: "sheep",
     diceRoll: 11,
     nodes: [
