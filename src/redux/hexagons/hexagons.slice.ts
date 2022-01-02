@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface Hexagon {
-  resource: "empty" | "wheat" | "lumber" | "clay" | "rock" | "desert";
+  resource: "empty" | "wheat" | "lumber" | "clay" | "rock" | "sheep" | "desert";
   diceRoll: 2 | 3 | 4 | 5 | 6 | 8 | 9 | 10 | 11 | 12 | undefined;
   nodes: `${number}-${number}-${number}`[];
 }
@@ -22,38 +22,46 @@ const initialState: HexagonsState = {
   5: undefined,
   6: {
     ...defaultHexagon,
+    resource: "rock",
     nodes: ["1-2-6", "2-6-7", "6-7-12", "6-11-12", "5-6-11", "1-5-6"],
   },
   7: {
     ...defaultHexagon,
+    resource: "sheep",
     nodes: ["2-3-7", "3-7-8", "7-8-13", "7-12-13", "6-7-12", "2-6-7"],
   },
   8: {
     ...defaultHexagon,
+    resource: "lumber",
     nodes: ["3-4-8", "4-8-9", "8-9-14", "8-13-14", "7-8-13", "3-7-8"],
   },
   9: undefined,
   10: undefined,
   11: {
     ...defaultHexagon,
+    resource: "wheat",
     nodes: ["5-6-11", "6-11-12", "11-12-18", "11-17-18", "10-11-17", "5-10-11"],
   },
   12: {
     ...defaultHexagon,
+    resource: "clay",
     nodes: ["6-7-12", "7-12-13", "12-13-19", "12-18-19", "11-12-18", "6-11-12"],
   },
   13: {
     ...defaultHexagon,
+    resource: "sheep",
     nodes: ["7-8-13", "8-13-14", "13-14-20", "13-19-20", "12-13-19", "7-12-13"],
   },
   14: {
     ...defaultHexagon,
+    resource: "clay",
     nodes: ["8-9-14", "9-14-15", "14-15-21", "14-20-21", "13-14-20", "8-13-14"],
   },
   15: undefined,
   16: undefined,
   17: {
     ...defaultHexagon,
+    resource: "wheat",
     nodes: [
       "10-11-17",
       "11-17-18",
@@ -65,6 +73,7 @@ const initialState: HexagonsState = {
   },
   18: {
     ...defaultHexagon,
+    resource: "lumber",
     nodes: [
       "11-12-18",
       "12-18-19",
@@ -76,6 +85,7 @@ const initialState: HexagonsState = {
   },
   19: {
     ...defaultHexagon,
+    resource: "desert",
     nodes: [
       "12-13-19",
       "13-19-20",
@@ -87,6 +97,7 @@ const initialState: HexagonsState = {
   },
   20: {
     ...defaultHexagon,
+    resource: "lumber",
     nodes: [
       "13-14-20",
       "14-20-21",
@@ -98,6 +109,7 @@ const initialState: HexagonsState = {
   },
   21: {
     ...defaultHexagon,
+    resource: "rock",
     nodes: [
       "14-15-21",
       "15-21-22",
@@ -111,6 +123,7 @@ const initialState: HexagonsState = {
   23: undefined,
   24: {
     ...defaultHexagon,
+    resource: "lumber",
     nodes: [
       "17-18-24",
       "18-24-25",
@@ -122,6 +135,7 @@ const initialState: HexagonsState = {
   },
   25: {
     ...defaultHexagon,
+    resource: "rock",
     nodes: [
       "18-19-25",
       "19-25-26",
@@ -133,6 +147,7 @@ const initialState: HexagonsState = {
   },
   26: {
     ...defaultHexagon,
+    resource: "wheat",
     nodes: [
       "19-20-26",
       "20-26-27",
@@ -144,6 +159,7 @@ const initialState: HexagonsState = {
   },
   27: {
     ...defaultHexagon,
+    resource: "sheep",
     nodes: [
       "20-21-27",
       "21-27-28",
@@ -157,6 +173,7 @@ const initialState: HexagonsState = {
   29: undefined,
   30: {
     ...defaultHexagon,
+    resource: "clay",
     nodes: [
       "24-25-30",
       "25-30-31",
@@ -168,6 +185,7 @@ const initialState: HexagonsState = {
   },
   31: {
     ...defaultHexagon,
+    resource: "wheat",
     nodes: [
       "25-26-31",
       "26-31-32",
@@ -179,6 +197,7 @@ const initialState: HexagonsState = {
   },
   32: {
     ...defaultHexagon,
+    resource: "sheep",
     nodes: [
       "26-27-32",
       "27-32-33",

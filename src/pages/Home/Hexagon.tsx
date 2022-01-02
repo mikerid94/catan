@@ -11,6 +11,7 @@ const colorMap: { [key in HexagonType["resource"]]: string } = {
   lumber: "green",
   clay: "orange",
   rock: "grey",
+  sheep: "lightgreen",
 };
 
 const Wrapper = styled.div<{ resource: HexagonType["resource"] }>`
