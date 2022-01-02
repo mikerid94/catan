@@ -1,6 +1,6 @@
 import { Store } from "redux";
 import { createWrapper, Context } from "next-redux-wrapper";
-import { hexagonsReducer, HexagonsState } from "./hexagons.slice";
+import { hexagonsReducer, HexagonsState } from "./hexagons/hexagons.slice";
 import { configureStore } from "@reduxjs/toolkit";
 
 export interface State {
