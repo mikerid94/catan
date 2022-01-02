@@ -1,31 +1,18 @@
-import { createStore, AnyAction, Store } from "redux";
-import { createWrapper, Context, HYDRATE } from "next-redux-wrapper";
+import { Store } from "redux";
+import { createWrapper, Context } from "next-redux-wrapper";
+import { hexagonsReducer, HexagonsState } from "./hexagons.slice";
+import { configureStore } from "@reduxjs/toolkit";
 
 export interface State {
-  tick: string;
+  hexagons: HexagonsState;
 }
-
-// create your reducer
-const reducer = (state: State = { tick: "init" }, action: AnyAction) => {
-  switch (action.type) {
-    case HYDRATE:
-      // Attention! This will overwrite client state! Real apps should use proper reconciliation.
-      return { ...state, ...action.payload };
-    case "TICK":
-      return { ...state, tick: action.payload };
-    default:
-      return state;
-  }
-};
 
 // create a makeStore function
 const makeStore = (context: Context) => {
-  const reduxDevTools =
-    (typeof window !== "undefined" &&
-      window.__REDUX_DEVTOOLS_EXTENSION__ &&
-      window.__REDUX_DEVTOOLS_EXTENSION__()) ||
-    undefined;
-  return createStore(reducer, reduxDevTools);
+  return configureStore({
+    reducer: { hexagons: hexagonsReducer },
+    devTools: true,
+  });
 };
 
 // export an assembled wrapper
