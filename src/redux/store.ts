@@ -2,10 +2,14 @@ import { Store } from "redux";
 import { createWrapper, Context } from "next-redux-wrapper";
 import { hexagonsReducer, HexagonsState } from "./hexagons/hexagons.slice";
 import { configureStore } from "@reduxjs/toolkit";
-import { settlementsReducer } from "./settlements/settlements.slice";
+import {
+  settlementsReducer,
+  SettlementState,
+} from "./settlements/settlements.slice";
 
 export interface State {
   hexagons: HexagonsState;
+  settlements: SettlementState;
 }
 
 // create a makeStore function

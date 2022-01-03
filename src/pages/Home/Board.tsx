@@ -1,6 +1,6 @@
 import { FC } from "react";
 import styled from "styled-components";
-import { Hexagon } from "./Hexagon";
+import { Hexagon } from "./Hexagon/Hexagon";
 
 const Container = styled.div`
   display: flex;
