@@ -6,16 +6,22 @@ import {
   settlementsReducer,
   SettlementState,
 } from "./settlements/settlements.slice";
+import { handReducer, HandState } from "./hand/hand.slice";
 
 export interface State {
   hexagons: HexagonsState;
   settlements: SettlementState;
+  hand: HandState;
 }
 
 // create a makeStore function
 const makeStore = (context: Context) => {
   return configureStore({
-    reducer: { hexagons: hexagonsReducer, settlements: settlementsReducer },
+    reducer: {
+      hexagons: hexagonsReducer,
+      settlements: settlementsReducer,
+      hand: handReducer,
+    },
     devTools: true,
   });
 };
