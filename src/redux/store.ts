@@ -2,6 +2,7 @@ import { Store } from "redux";
 import { createWrapper, Context } from "next-redux-wrapper";
 import { hexagonsReducer, HexagonsState } from "./hexagons/hexagons.slice";
 import { configureStore } from "@reduxjs/toolkit";
+import { settlementsReducer } from "./settlements/settlements.slice";
 
 export interface State {
   hexagons: HexagonsState;
@@ -10,7 +11,7 @@ export interface State {
 // create a makeStore function
 const makeStore = (context: Context) => {
   return configureStore({
-    reducer: { hexagons: hexagonsReducer },
+    reducer: { hexagons: hexagonsReducer, settlements: settlementsReducer },
     devTools: true,
   });
 };
