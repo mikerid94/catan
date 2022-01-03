@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { Settlement } from "../../pages/Home/Hexagon/Settlement";
 
 interface Settlement {
   position: string;
   player: number;
   type: "settlement" | "city";
 }
-const initialState: Settlement[] = [
+export type SettlementState = Settlement[];
+const initialState: SettlementState = [
   { position: "11-12-18", player: 1, type: "settlement" },
   { position: "20-21-27", player: 1, type: "settlement" },
   { position: "8-13-14", player: 2, type: "settlement" },
