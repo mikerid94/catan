@@ -7,7 +7,7 @@ import { State } from "../../redux/store";
 const CAP_PLAYER_NUMBER = 3;
 const DICE_SCORES = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-const Dice = styled.div`
+const Die = styled.div`
   padding: 10px;
   margin: 10px;
   border: 2px solid black;
@@ -15,6 +15,19 @@ const Dice = styled.div`
   height: 40px;
   text-align: center;
   border-radius: 5px;
+`;
+
+const Container = styled.div`
+  display: flex;
+  margin-top: 50px;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Dice = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 export const DiceRoll: FC = () => {
@@ -43,24 +56,18 @@ export const DiceRoll: FC = () => {
     : "none";
 
   return (
-    <div
-      style={{
-        marginTop: 50,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
-      <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
+    <Container>
+      Player {CAP_PLAYER_NUMBER} roll:
+      <Dice>
         {DICE_SCORES.map((score) => {
           return (
-            <Dice key={score} onClick={() => setDiceRoll(score)}>
+            <Die key={score} onClick={() => setDiceRoll(score)}>
               {score}
-            </Dice>
+            </Die>
           );
         })}
-      </div>
+      </Dice>
       <div>Resources gained: {gainedString}</div>
-    </div>
+    </Container>
   );
 };
