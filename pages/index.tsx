@@ -1,1 +1,1 @@
-export { Board as default } from "../src/pages/Home/Board";
+export { Home as default } from "../src/pages/Home";
